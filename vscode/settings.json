@@ -1,0 +1,146 @@
+{
+    "editor.fontFamily": "Cascadia Code",
+    "editor.fontSize": 13,
+    "editor.lineHeight": 20,
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "normal",
+    "editor.renderLineHighlight": "gutter",
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.lineHeight": 1.1,
+    "editor.tabSize": 2,
+    "editor.rulers": [85],
+    "editor.formatOnSave": false,
+    "editor.autoIndent": "full",
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+      },
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "[typescriptreact]": {
+      "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+      }
+    },
+    "[robot]": {
+      "editor.fontLigatures": false,
+      "editor.tabSize": 4
+    },
+    "files.associations": {
+      ".sequelizerc": "javascript",
+      ".stylelintrc": "json",
+      ".prettierrc": "json"
+    },
+    "extensions.ignoreRecommendations": true,
+    "emmet.syntaxProfiles": {
+      "javascript": "jsx"
+    },
+    "emmet.includeLanguages": {
+      "javascript": "javascriptreact"
+    },
+    "workbench.editor.highlightModifiedTabs": true,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "git.enableSmartCommit": true,
+    "editor.parameterHints.enabled": false,
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "editor.autoClosingQuotes": "languageDefined",
+    "editor.autoClosingBrackets": "languageDefined",
+    "javascript.suggest.autoImports": false,
+    "typescript.suggest.autoImports": false,
+    "workbench.colorCustomizations": {
+      "editorLineNumber.activeForeground": "#ffffff",
+      "editorLineNumber.foreground": "#555555",
+      "editor.lineHighlightBackground": "#ffffff00",
+      "editor.lineHighlightBorder": "#ff000000",
+      "tab.activeBorderTop": "#ff000000"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "breadcrumbs.enabled": false,
+    "exporer.confirmDelete": false,
+    "files.trimTrailingWhitespace": false,
+    "editor.dragAndDrop": true,
+    "files.insertFinalNewline": false,
+    "editor.cursorStyle": "line",
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.suggestSelection": "first",
+    "prettier.jsxBracketSameLine": true,
+    "prettier.jsxSingleQuote": true,
+    "editor.trimAutoWhitespace": false,
+    "editor.showUnused": true,
+    "explorer.compactFolders": false,
+    "workbench.startupEditor": "welcomePage",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "files.trimFinalNewlines": false,
+    "python.languageServer": "Microsoft",
+    "[python]": {
+      "editor.rulers": [79],
+      "editor.formatOnSave": false,
+      "editor.tabSize": 4,
+      "editor.defaultFormatter": "ms-python.python"
+    },
+    "python.autoComplete.addBrackets": true,
+    "python.linting.enabled": true,
+    "python.formatting.provider": "autopep8",
+    "python.formatting.blackArgs": ["--line-length", "79"],
+    "python.autoUpdateLanguageServer": true,
+    "[markdown]": {
+      "editor.formatOnSave": false
+    },
+    "editor.linkedEditing": true,
+    "explorer.confirmDelete": false,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    },
+    "editor.cursorBlinking": "smooth",
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "terminal.integrated.cursorBlinking": true,
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.productIconTheme": "fluent-icons",
+    "workbench.editorAssociations": {
+      "*.ipynb": "jupyter-notebook",
+      "git-rebase-todo": "gitlens.rebase"
+    },
+    "python.showStartPage": false,
+    "terminal.integrated.enablePersistentSessions": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "python.pythonPath": "/bin/python3",
+    "files.exclude": {
+      "**/__pycache__": true
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "python.defaultInterpreterPath": "/bin/python3",
+    "notebook.cellToolbarLocation": {
+      "default": "right",
+      "jupyter-notebook": "left"
+    },
+    "git.confirmSync": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.verticalScrollbarSize": 5,
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.colorTheme": "dark-plus-syntax",
+    "workbench.activityBar.visible": false,
+    "gitlens.advanced.messages": {
+      "suppressGitMissingWarning": true
+    },
+  }
