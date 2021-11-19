@@ -25,6 +25,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
 
+
 " Generic Programming Support
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tobyS/vmustache'
@@ -35,14 +36,15 @@ Plugin 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 Plugin 'vim-python/python-syntax'
 
 " Theme / Interface
-Plugin 'vim-airline/vim-airline'
-"Plugin 'itchyny/lightline.vim'
+"Plugin 'vim-airline/vim-airline'
+Plugin 'itchyny/lightline.vim'
 Plugin 'owickstrom/vim-colors-paramount'
 
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'mkarmona/colorsbox'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'daylerees/colour-schemes'
+Plugin 'ryanoasis/vim-devicons'
 
 " Robot Framework
 Plugin 'mfukar/robotframework-vim'
@@ -87,7 +89,7 @@ set hlsearch
 set laststatus=2
 
 " Enable highlighting of the current line
-" set cursorline
+set cursorline
 
 " Theme and Styling
 set t_Co=256
@@ -98,16 +100,13 @@ let g:hybrid_reduced_contrast = 1
 let g:hybrid_custom_term_colors= 1
 colorscheme hybrid
 
-"colorscheme spacemacs-theme
-
-"Status-Bar Configuration
-
 let g:airline#extensions#tabline#enabled = 1
 " let g:airline_powerline_fonts = 1
-let g:airline_theme='hybrid'
-" let g:lightline = {
-"       \ 'colorscheme': 'darcula',
-"       \ }
+" let g:airline_theme='hybrid'
+
+let g:lightline = {
+       \ 'colorscheme': 'darcula',
+       \ }
 
 let g:deoplete#enable_at_startup = 1
 
@@ -191,17 +190,19 @@ set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
-set guifont=Inconsolata\ XL\ 11,Inconsolata\ 12,Monaco\ 12
+set guifont=Hack\ 11
 
 
 highlight LineNr           ctermfg=8    ctermbg=none    cterm=none
 highlight CursorLineNr     ctermfg=7    ctermbg=8       cterm=none
 highlight VertSplit        ctermfg=0    ctermbg=8       cterm=none
-"highlight Statement        ctermfg=2    ctermbg=none    cterm=none
+highlight Statement        ctermfg=blue    ctermbg=none    cterm=bold
 highlight Directory        ctermfg=4    ctermbg=none    cterm=none
 highlight StatusLine       ctermfg=7    ctermbg=8       cterm=none
 highlight StatusLineNC     ctermfg=7    ctermbg=8       cterm=none
 highlight NERDTreeClosable ctermfg=2
 highlight NERDTreeOpenable ctermfg=8
-highlight Comment          ctermfg=4    ctermbg=none    cterm=italic
+highlight Comment          ctermfg=4       ctermbg=none    cterm=italic
 highlight Search           ctermfg=none    ctermbg=240    cterm=none
+highlight CursorLine       cterm=NONE      ctermbg=none   ctermfg=none
+

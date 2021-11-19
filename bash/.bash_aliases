@@ -1,0 +1,8 @@
+alias ls='exa --icons'
+alias ll='exa -lg --icons'
+alias python='python3'
+alias vi='nvim'
+alias vim='nvim'
+alias py='python3'
+alias pip='pip3'
+alias cachedel='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf'
