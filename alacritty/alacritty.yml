@@ -1,0 +1,156 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+env:
+  TERM: xterm-256color
+
+##################################
+############# WINDOWS ############
+##################################
+window:
+  # opacity: 0.75
+  # position:
+  #   x: 0
+  #   y: 0
+  padding:
+    x: 0
+    y: 0
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+
+  # Window title
+  # title: Alacritty
+  # Window class (Linux/BSD only):
+  class:
+    # Application instance name
+    instance: Alacritty
+    # General application class
+    general: Alacritty
+
+##################################
+############## FONTS #############
+##################################
+font:
+  # Normal (roman) font face
+  normal:
+    family: jetBrainsMono Nerd Font
+    # Style can be specified to pick a specific face.
+    style: Semibold
+
+  # The bold font face
+  bold:
+    family: jetBrainsMono Nerd Font
+    # Style can be specified to pick a specific face.
+    style: Bold
+
+  # The italic font face
+  italic:
+    family: jetBrainsMono Nerd Font
+    # Style can be specified to pick a specific face.
+    style: Italic
+  size: 8
+
+  # Offset is the extra space around each character. `offset.y` can be thought of
+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+  offset:
+    x: 1
+    y: 1
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: true
+##################################
+############# COLORS #############
+##################################
+colors:
+  name: Monochrome
+  author: "Jaydder Oliveira"
+  primary:
+    background: "#000000"
+    foreground: "#ffffff"
+  cursor:
+    text: "#000000"
+    cursor: "#ffffff"
+  normal:
+    black: "#212121"
+    red: "#f09198"
+    green: "#e5e4e2"
+    yellow: "#ffcb6b"
+    blue: "#82aaff"
+    magenta: "#c792ea"
+    cyan: "#89ddff"
+    white: "#eeffff"
+  bright:
+    black: "#4a4a4a"
+    red: "#f07178"
+    green: "#c3e88d"
+    yellow: "#ffcb6b"
+    blue: "#82aaff"
+    magenta: "#c792ea"
+    cyan: "#89ddff"
+    white: "#ffffff"
+
+  # name: Gnome
+  # author: "Jaydder Oliveira"
+  # primary:
+  #   background: "#000000"
+  # cursor:
+  #   text: "#000000"
+  #   cursor: "#aaaaaa"
+  # normal:
+  #   black: "#000000"
+  #   red: "#cd0000"
+  #   green: "#00cd00"
+  #   yellow: "#cdcd00"
+  #   blue: "#0000ee"
+  #   magenta: "#cd00cd"
+  #   cyan: "#00cdcd"
+  #   white: "#e5e5e5"
+  # bright:
+  #   black: "#7f7f7f"
+  #   red: "#ff0000"
+  #   green: "#00ff00"
+  #   yellow: "#ffff00"
+  #   blue: "#5c5cff"
+  #   magenta: "#ff00ff"
+  #   cyan: "#00ffff"
+  #   white: "#ffffff"
+# Allow terminal applications to change Alacritty's window title.
+##################################
+############# CURSOR #############
+##################################
+cursor:
+  style: Block
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 100000
+
+dynamic_title: true
+
+key_bindings:
+  - { key: L, mods: Control, chars: "\f" }
+  - {
+      key: U,
+      mods: Control,
+      action: ScrollPageUp,
+      mode: ~Alt
+    }
+  - {
+      key: D,
+      mods: Control,
+      action: ScrollPageDown,
+      mode: ~Alt
+    }
+  - {
+      key: Home,
+      mods: Shift,
+      action: ScrollToTop,
+      mode: ~Alt
+    }
+  - {
+      key: End,
+      mods: Shift,
+      action: ScrollToBottom,
+      mode: ~Alt
+    }
+theme: Monochrome
