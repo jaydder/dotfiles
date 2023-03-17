@@ -4,22 +4,21 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-exec xrandr --output VGA-1  --primary  --mode 1920x1080 --output HDMI-1 --mode 1600x900 --rotate left --left-of VGA-1
 
+exec setxkbmap -layout br
 
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 9
 
 exec --no-startup-id  ${HOME}/.fehbg
 
-exec_always --no-startup-id  picom --experimental-backends
+exec_always --no-startup-id  picom 
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -47,13 +46,15 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec tilix
 
 # kill focused window
 bindsym $mod+w kill
 
-# start dmenu (a program launcher)
+# start rofi (a program launcher)
 bindsym $mod+d exec "rofi -show drun -show-icons"
+
+bindsym $mod+c exec "rofi -show run"
 
 # lock screen
 bindsym $mod+Shift+l exec "~/.config/i3lock/lock"
@@ -183,6 +184,7 @@ mode "resize" {
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+#
 bar {
 status_command i3status
     wheel_up_cmd nop
@@ -213,5 +215,11 @@ exec_always xsetroot -cursor_name left_ptr &
 
 # default_border pixel 2
 default_floating_border pixel 1
-for_window [class="^.*"] border pixel
+for_window [class="^.*"] border pixel 2
+
+gaps inner 8
+gaps outer 1
+default_border pixel 4
+smart_borders on
+smart_borders no_gaps
 

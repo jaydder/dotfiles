@@ -13,6 +13,9 @@ shopt -s globstar
 HISTCONTROL=ignoreboth:erasedups
 HISTIGNORE=?:??
 PROMPT_COMMAND='history -a'
+HISTFILESIZE=
+HISTSIZE=
+HISTTIMEFORMAT="[%F %T] "
 shopt -s histappend histverify
 
 if [ -f ~/.bash_aliases ]; then
@@ -56,10 +59,7 @@ export LESSHISTFILE=-
 # colorize ls
 [ -x /usr/bin/dircolors ] && eval "$(dircolors -b)"
 
-# if this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-	PS1="\[\e]0;\u@\h: \w\a\]$PS1"
-	;;
-esac
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
 
+PATH=$PATH:$HOME/scripts

@@ -1,0 +1,36 @@
+{
+    "background-color": "#000000",
+    "badge-color": "#AC7EA8",
+    "bold-color": "#FFFFFF",
+    "comment": "",
+    "cursor-background-color": "#A1B0B8",
+    "cursor-foreground-color": "#BDC3C7",
+    "foreground-color": "#DEDDDA",
+    "highlight-background-color": "#000000",
+    "highlight-foreground-color": "#FFFFFF",
+    "name": "Custom",
+    "palette": [
+        "#212121",
+        "#f09198",
+        "#e5e4e2",
+        "#ffcb6b",
+        "#82aaff",
+        "#c792ea",
+        "#89ddff",
+        "#eeffff",
+        
+        "#4a4a4a",
+        "#f07178",
+        "#c3e88d",
+        "#ffcb6b",
+        "#82aaff",
+        "#c792ea",
+        "#89ddff",
+        "#ffffff"
+    ],
+    "use-badge-color": false,
+    "use-bold-color": false,
+    "use-cursor-color": false,
+    "use-highlight-color": false,
+    "use-theme-colors": false
+}

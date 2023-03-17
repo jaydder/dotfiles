@@ -16,16 +16,18 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
+" Use release branch (recommended)
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Or build from source code by using yarn: https://yarnpkg.com
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Generic Programming Support
 Plug 'tomtom/tcomment_vim'
 Plug 'tobyS/vmustache'
 Plug 'ekalinin/Dockerfile.vim'
-
-"Python
-Plug 'davidhalter/jedi-vim'
-Plug 'vim-python/python-syntax'
 
 " Theme / Interface
 Plug 'w0ng/vim-hybrid'
@@ -150,7 +152,7 @@ nnoremap <A-a> :FloatermToggle<CR>
 tnoremap <A-a> <C-\><C-n>:FloatermToggle<CR>
 nnoremap <silent> <Leader>+ :vertical reseize +5<CR>
 nnoremap <silent> <Leader>- :vertical reseize -5<CR>
-" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 
 " Advanced customization using autoload functions

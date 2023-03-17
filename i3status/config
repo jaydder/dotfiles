@@ -16,7 +16,7 @@ general {
 }
 
 order += "volume master"
-# order += "disk /"
+order += "battery 0"
 order += "cpu_usage"
 order += "tztime local"
 
@@ -30,16 +30,30 @@ cpu_usage {
 }
 
 disk "/" {
-	format = "  %avail"
-	prefix_type	= custom
-	low_threshold = 20
-	threshold_type = percentage_avail
+format = "  %avail"
+prefix_type	= custom
+low_threshold = 20
+threshold_type = percentage_avail
 }
 
 volume master {
-        format = " %volume"
-        format_muted = " Muted"
-        device = "default"
-        mixer = "Master"
-        mixer_idx = 0
+    format = "♪: %volume"
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
 }
+
+battery 0 {
+    format = "%status %percentage"
+    format_down = ""
+    last_full_capacity = true
+    integer_battery_capacity = true
+    low_threshold = 11
+    threshold_type = percentage
+    hide_seconds = true
+    status_chr = " "
+    status_bat = " "
+    status_unk = " "
+    status_full = " "
+}
+
