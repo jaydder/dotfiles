@@ -15,14 +15,11 @@ Plug 'schickling/vim-bufonly'
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-
-" Use release branch (recommended)
+Plug 'arcticicestudio/nord-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Or build from source code by using yarn: https://yarnpkg.com
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Generic Programming Support
 Plug 'tomtom/tcomment_vim'
@@ -33,13 +30,14 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'w0ng/vim-hybrid'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'bluz71/vim-moonfly-colors'
-Plug 'andreasvc/vim-256noir'
+Plug 'owickstrom/vim-colors-paramount'
 
+" Plug 'bluz71/vim-moonfly-colors'
+" Plug 'vimcolorschemes/vimcolorschemes'
 
 " Robot Framework
-Plug 'mfukar/robotframework-vim'
-Plug 'evedovelli/rst-robotframework-syntax-vim'
+" Plug 'mfukar/robotframework-vim'
+" Plug 'evedovelli/rst-robotframework-syntax-vim'
 
 
 call plug#end()
@@ -47,7 +45,7 @@ call plug#end()
 " Configuration Section
 """""""""""""""""""""""""""""""""""""
 set completeopt-=preview
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+set wildignore+=*/tmp/*,*.o,*.swp,*.zip,*.pyc,*.db,*.sqlite
 set backspace=indent,eol,start
 
 " Show linenumbers
@@ -64,7 +62,7 @@ set softtabstop=2
 set tabstop=4
 set expandtab
 
-set noshowmode
+set showmode
 
 set noswapfile
 set nobackup
@@ -77,7 +75,7 @@ set sidescroll=1
 
 set hlsearch
 " Always display the status line
-set laststatus=1
+" set laststatus=1
 
 " Enable highlighting of the current line
 set cursorline
@@ -87,13 +85,12 @@ set shell=/bin/bash
 " Theme and Styling
 set t_Co=256
 set background=dark
-" set termguicolors
+set termguicolors
 
-let g:hybrid_reduced_contrast = 1
-let g:hybrid_custom_term_colors= 1
-colorscheme hybrid
-" colorscheme hagen
-
+" let g:hybrid_reduced_contrast = 1
+" let g:hybrid_custom_term_colors= 1
+colorscheme twm
+" colorscheme deus
 " This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -106,7 +103,9 @@ let g:fzf_action = {
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='term'
+let g:airline_theme='minimalist'
+" powerline symbols
+"
 
 " In Neovim, you can set up fzf window using a Vim command
 " let g:fzf_layout = { 'window': 'enew' }
@@ -153,6 +152,13 @@ tnoremap <A-a> <C-\><C-n>:FloatermToggle<CR>
 nnoremap <silent> <Leader>+ :vertical reseize +5<CR>
 nnoremap <silent> <Leader>- :vertical reseize -5<CR>
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+nnoremap ss <CR> :split \<CR>
+nnoremap vv <CR> :vsplit <CR>
+
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 
 
 " Advanced customization using autoload functions
@@ -164,7 +170,7 @@ let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycach
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks=1
 let g:nerdtree_tabs_focus_on_files=1
-let g:NERDTreeWinSize = 30
+let g:NERDTreeWinSize = 38
 let g:NERDTreeDirArrowExpandable = '►'
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
@@ -175,25 +181,29 @@ let g:jedi#goto_command = 0
 let g:jedi#auto_vim_configuration = 1
 let g:jedi#auto_initialization = 1
 
+highlight Normal            guibg=black
+" highlight LineNr           ctermfg=240        ctermbg=none    cterm=none   guifg=240        guibg=none    gui=none
+highlight CursorLineNr      ctermbg=none       cterm=bold       
+highlight VertSplit         ctermfg=0          ctermbg=8        cterm=none
+" highlight Statement        cterm=bold
+highlight Directory         ctermfg=4          ctermbg=none     cterm=none
+highlight StatusLine        ctermfg=7          ctermbg=8        cterm=none   guifg=7          guibg=8       gui=none
+highlight StatusLineNC      ctermfg=7          ctermbg=8        cterm=none   guifg=7          guibg=8       gui=none
+highlight NERDTreeClosable  ctermfg=2
+highlight NERDTreeOpenable  ctermfg=8
+" highlight Comment           ctermfg=4          ctermbg=none     cterm=italic
+highlight Comment           ctermfg=240        ctermbg=none     cterm=italic
+"highlight Search           ctermfg=none       ctermbg=240      cterm=none
+hi search                   term=reverse       ctermfg=0        ctermbg=3 guifg=bg guibg=SpringGreen
+highlight CursorLine       cterm=NONE          ctermbg=none     ctermfg=none         guibg=none    guifg=none gui=none
+highlight Function          cterm=bold         ctermfg=grey
+highlight Constant          ctermfg=white      cterm=bold
+" highlight String            ctermfg=green
+highlight TabLine           cterm=none         ctermbg=none     ctermfg=none
+highlight VertSplit         gui=none           guibg=none       guifg=grey
+highlight ColorColumn       ctermfg=none       cterm=none       gui=none ctermbg=none guifg=none guibg=none
+highlight StatusLineNC      cterm=none         ctermfg=none     ctermbg=none
+highlight CocInlayHint      ctermbg=256        guibg=256        ctermfg=240  cterm=italic gui=italic
 
-highlight LineNr           ctermfg=240        ctermbg=none    cterm=none   guifg=240        guibg=none    gui=none
-highlight CursorLineNr     ctermfg=red        ctermbg=none    cterm=bold   guifg=red        guibg=none    gui=bold 
-highlight VertSplit        ctermfg=0          ctermbg=8       cterm=none
-highlight Statement        ctermbg=none       cterm=bold
-highlight Directory        ctermfg=4          ctermbg=none    cterm=none
-highlight StatusLine       ctermfg=7          ctermbg=8       cterm=none   guifg=7          guibg=8       gui=none
-highlight StatusLineNC     ctermfg=7          ctermbg=8       cterm=none   guifg=7          guibg=8       gui=none
-highlight NERDTreeClosable ctermfg=2
-highlight NERDTreeOpenable ctermfg=8
-highlight Comment          ctermfg=4          ctermbg=none    cterm=italic
-highlight Comment          ctermfg=240        ctermbg=none    cterm=italic
-"highlight Search           ctermfg=none       ctermbg=240     cterm=none
-hi search term=reverse ctermfg=0 ctermbg=3 guifg=bg guibg=SpringGreen
-highlight CursorLine       cterm=NONE         ctermbg=none    ctermfg=none gui=none         guibg=none    guifg=none
-highlight Function          cterm=bold
-highlight Constant          ctermfg=white    cterm=bold
-highlight TabLine           cterm=none         ctermbg=none    ctermfg=none
-highlight VertSplit         cterm=none         ctermbg=none    ctermfg=grey
-highlight ColorColumn      ctermfg=none      cterm=none gui=none ctermbg=none guifg=none guibg=none
 
-
+set statusline+=\ \ \ \ "
