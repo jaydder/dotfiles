@@ -1,8 +1,0 @@
-// Place your key bindings in this file to override the defaults
-[
-
-  //toggle terminal
-  { "key": "alt+a", "command": "workbench.action.terminal.toggleTerminal" },
-  //create new file
-  { "key": "ctrl+n", "command": "explorer.newFile" },
-]

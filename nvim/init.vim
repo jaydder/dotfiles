@@ -15,29 +15,15 @@ Plug 'schickling/vim-bufonly'
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-Plug 'arcticicestudio/nord-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
-
+Plug 'w0ng/vim-hybrid'
+Plug 'owickstrom/vim-colors-paramount'
 " Generic Programming Support
 Plug 'tomtom/tcomment_vim'
 Plug 'tobyS/vmustache'
 Plug 'ekalinin/Dockerfile.vim'
-
-" Theme / Interface
-Plug 'w0ng/vim-hybrid'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'owickstrom/vim-colors-paramount'
-
-" Plug 'bluz71/vim-moonfly-colors'
-" Plug 'vimcolorschemes/vimcolorschemes'
-
-" Robot Framework
-" Plug 'mfukar/robotframework-vim'
-" Plug 'evedovelli/rst-robotframework-syntax-vim'
 
 
 call plug#end()
@@ -48,9 +34,7 @@ set completeopt-=preview
 set wildignore+=*/tmp/*,*.o,*.swp,*.zip,*.pyc,*.db,*.sqlite
 set backspace=indent,eol,start
 
-" Show linenumbers
 set number
-set ruler
 "set relativenumber
 
 " Set Proper Tabs
@@ -62,6 +46,12 @@ set softtabstop=2
 set tabstop=4
 set expandtab
 
+set statusline+=\ \ \ \ "
+
+set noshowmode
+set noruler
+set laststatus=0
+set noshowcmd
 set showmode
 
 set noswapfile
@@ -74,64 +64,17 @@ set sidescrolloff=15
 set sidescroll=1
 
 set hlsearch
-" Always display the status line
-" set laststatus=1
-
-" Enable highlighting of the current line
+set laststatus=1
 set cursorline
-
 set shell=/bin/bash
 
 " Theme and Styling
 set t_Co=256
 set background=dark
-set termguicolors
+set notermguicolors
 
-" let g:hybrid_reduced_contrast = 1
-" let g:hybrid_custom_term_colors= 1
-colorscheme twm
-" colorscheme deus
-" This is the default extra key bindings
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
-
-" Default fzf layout
-" - down / up / left / right
-" let g:fzf_layout = { 'down': '~40%' }
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-let g:airline_theme='minimalist'
-" powerline symbols
-"
-
-" In Neovim, you can set up fzf window using a Vim command
-" let g:fzf_layout = { 'window': 'enew' }
-" let g:fzf_layout = { 'window': '-tabnew' }
-
-" Customize fzf colors to match your color scheme
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
-
-" Enable per-command history.
-" CTRL-N and CTRL-P will be automatically bound to next-history and
-" previous-history instead of down and up. If you don't like the change,
-" explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
-let g:fzf_history_dir = '~/.local/share/fzf-history'
-
+colorscheme paramount
+" colorscheme 256_noir
 
 let mapleader = ","
 """""""""""""""""""""""""""""""""""""
@@ -160,6 +103,10 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 
+nmap <silent><nowait> gd <Plug>(coc-definition)
+nmap <silent><nowait> gy <Plug>(coc-type-definition)
+nmap <silent><nowait> gi <Plug>(coc-implementation)
+nmap <silent><nowait> gr <Plug>(coc-references)
 
 " Advanced customization using autoload functions
 set mouse=a
@@ -176,34 +123,19 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrowCollapsible = '▼'
 
-let g:python_highlight_all = 1
-let g:jedi#goto_command = 0
-let g:jedi#auto_vim_configuration = 1
-let g:jedi#auto_initialization = 1
-
-highlight Normal            guibg=black
-" highlight LineNr           ctermfg=240        ctermbg=none    cterm=none   guifg=240        guibg=none    gui=none
-highlight CursorLineNr      ctermbg=none       cterm=bold       
-highlight VertSplit         ctermfg=0          ctermbg=8        cterm=none
-" highlight Statement        cterm=bold
+highlight Normal            guibg=none          ctermbg=none     cterm=none
+highlight CursorLineNr      ctermbg=none       cterm=bold
+highlight Statement        cterm=bold
 highlight Directory         ctermfg=4          ctermbg=none     cterm=none
 highlight StatusLine        ctermfg=7          ctermbg=8        cterm=none   guifg=7          guibg=8       gui=none
 highlight StatusLineNC      ctermfg=7          ctermbg=8        cterm=none   guifg=7          guibg=8       gui=none
 highlight NERDTreeClosable  ctermfg=2
 highlight NERDTreeOpenable  ctermfg=8
-" highlight Comment           ctermfg=4          ctermbg=none     cterm=italic
 highlight Comment           ctermfg=240        ctermbg=none     cterm=italic
-"highlight Search           ctermfg=none       ctermbg=240      cterm=none
-hi search                   term=reverse       ctermfg=0        ctermbg=3 guifg=bg guibg=SpringGreen
+highlight Search           ctermfg=none       ctermbg=240      cterm=none
 highlight CursorLine       cterm=NONE          ctermbg=none     ctermfg=none         guibg=none    guifg=none gui=none
-highlight Function          cterm=bold         ctermfg=grey
-highlight Constant          ctermfg=white      cterm=bold
-" highlight String            ctermfg=green
 highlight TabLine           cterm=none         ctermbg=none     ctermfg=none
 highlight VertSplit         gui=none           guibg=none       guifg=grey
 highlight ColorColumn       ctermfg=none       cterm=none       gui=none ctermbg=none guifg=none guibg=none
 highlight StatusLineNC      cterm=none         ctermfg=none     ctermbg=none
 highlight CocInlayHint      ctermbg=256        guibg=256        ctermfg=240  cterm=italic gui=italic
-
-
-set statusline+=\ \ \ \ "
