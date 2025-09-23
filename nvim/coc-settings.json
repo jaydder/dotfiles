@@ -1,7 +1,0 @@
-{
-  "python.linting.flake8Enabled": true,
-  "python.linting.enabled": false,
-  "snippets.ultisnips.pythonPrompt": false,
-  "python.jediEnabled": false
-
-}
