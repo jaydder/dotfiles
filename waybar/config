@@ -1,0 +1,46 @@
+[
+    {
+        "include": [
+            "~/.config/waybar/modules/clock.json",
+            "~/.config/waybar/modules/cpu.json",
+            "~/.config/waybar/modules/logo.json",
+            "~/.config/waybar/modules/memory.json",
+            "~/.config/waybar/modules/pulseaudio.json",
+            "~/.config/waybar/modules/tray.json",
+            "~/.config/waybar/modules/workspace.json"
+        ],
+        "layer": "top",
+        "position": "top",
+        "spacing": 0,
+        "output": "DP-2",
+        "height": 24,
+        "modules-left": [
+            "custom/logo",
+            "hyprland/workspaces"
+        ],
+        "modules-center": [
+            "clock"
+        ],
+        "modules-right": [
+            "tray",
+            "memory",
+            "cpu",
+            "pulseaudio"
+        ]
+    },
+    {
+        "include": [
+            "~/.config/waybar/modules/logo.json",
+            "~/.config/waybar/modules/workspace-2.json"
+        ],
+        "output": "HDMI-A-1",
+        "layer": "top",
+        "position": "top",
+        "spacing": 0,
+        "height": 24,
+        "modules-left": [
+            "custom/logo",
+            "hyprland/workspaces"
+        ]
+    }
+]

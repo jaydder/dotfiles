@@ -1,0 +1,6 @@
+{
+"clock": {
+        "tooltip-format": "{calendar}",
+        "format": "{:%I:%M %p | %a, %d %b %Y}"
+    }
+  }
