@@ -1,3 +1,0 @@
-return {
-  { "roxma/nvim-yarp" }
-}

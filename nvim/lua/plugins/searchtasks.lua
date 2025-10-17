@@ -1,3 +1,0 @@
-return {
-  { "gilsondev/searchtasks.vim" }
-}
