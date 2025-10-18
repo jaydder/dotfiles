@@ -1,0 +1,23 @@
+#! /bin/bash
+
+
+code --install-extension catppuccin.catppuccin-vsc
+code --install-extension charliermarsh.ruff
+code --install-extension cweijan.vscode-database-client2
+code --install-extension eamodio.gitlens
+code --install-extension enkia.tokyo-night
+code --install-extension github.copilot
+code --install-extension github.copilot-chat
+code --install-extension kevinrose.vsc-python-indent
+code --install-extension lewxdev.vscode-glyph
+code --install-extension miguelsolorio.fluent-icons
+code --install-extension miguelsolorio.symbols
+code --install-extension mikestead.dotenv
+code --install-extension ms-python.debugpy
+code --install-extension ms-python.isort
+code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-python.vscode-python-envs
+code --install-extension naumovs.color-highlight
+code --install-extension subframe7536.custom-ui-style
+code --install-extension vscodevim.vim
